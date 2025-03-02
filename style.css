@@ -1,0 +1,962 @@
+@font-face {
+    font-family: 'maleficent';
+    src: url('PentaGrams\ Malefissent.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+table {
+    border-collapse: collapse;
+}
+button {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+.material-symbols-rounded {
+    border: 0;
+    background: transparent;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    background: #030303;
+    color: #ffffff;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+        font-family: 'Pretendard-Regular';
+}
+.wrap {
+    position: relative;
+    background: url('img/background.jpg') no-repeat center/cover;
+    width: 100%;
+    height: 100vh;
+} 
+
+.innertop {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    justify-content: center;
+}
+.logoimg > img {
+    position: absolute;
+    bottom: 10px;
+    width: 1142px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header {
+    position: relative;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(#030303, #0303035a);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+}
+.headerinner {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 1300px;
+    height: 100%;
+}
+h1 {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    transform: translateY(-50%);
+    font-family: 'maleficent';
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+.menu {
+    position: absolute;
+    display: flex;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu > li > a {
+    padding: 0 20px;
+    font-family: 'maleficent';
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+.menu2 {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 70%;
+    transform: translateY(-50%);
+    align-items: center;
+    gap: 10px;
+}
+.menu2 > li:first-child {
+    padding: 0 10px 0 20px;
+    border-left: 1px solid #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+#menu-toggle > .material-symbols-rounded {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.down {
+    text-align: center;
+}
+.down > p {
+    font-size: 17px;
+    color: #ffffff;
+    font-family: 'maleficent';
+}
+.down > .material-symbols-rounded {
+    font-size: 33px;
+}
+/*시놉시스*/
+#sinopsis {
+    position: relative;
+    width: 100%;
+    height: 793px;
+    text-align: center;
+}
+.sinopsisbg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.maleimg {
+    position: relative;
+    margin-top: 100px;
+    margin: auto;
+    width: 25px;
+    z-index: 4;
+}
+h2 {
+    position: relative;
+    font-family: 'maleficent';
+    font-size: 25px;
+    letter-spacing: 2px;
+    line-height: auto;
+    margin-top: 20px;
+    z-index: 4;
+}
+h3 {
+    margin-top: 70px;
+    font-size: 38px;
+    line-height: 57.6px;
+    font-weight: 900;
+}
+#sinopsis > p {
+    margin-top: 38px;
+    font-size: 20px;
+    line-height: 59px;
+}
+br.mobile {
+    display: none;
+}
+/*트레일러*/
+#trailer > iframe {
+    width: 100%;
+    height: 847px;
+}
+/*캐릭터소개*/
+#character {
+    width: 100%;
+    text-align: center;
+}
+.character {
+    display: flex;
+    width: 1300px;
+    margin: auto;
+    margin-top: 70px;
+    gap: 20px;
+}
+.charactercon {
+    position: relative;
+    width: 310px;
+    height: 650px;
+    margin: auto;
+    padding-bottom: 160px;
+}
+.characterimg-w {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.characterimg-w img {
+    width: 100%;
+    height: auto; /* 혹은 고정 비율을 원한다면 height: 100%; object-fit: cover; */
+    filter: blur(3px) brightness(0.7);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+.charactercon:hover .characterimg-w img {
+    transform: scale(1.1);
+    filter: blur(0) brightness(1);
+}
+.characterimg-m {
+    display: none;
+}
+.c-info {
+    position: relative;
+    margin: auto;
+    bottom: 0;
+    text-align: center;
+}
+.c-infobg {
+    position: absolute;
+    width: 310px;
+    height: 450px;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #00000000, #000000);
+}
+.infocon {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 310px;
+}
+.infocon blockquote, .infocon .line, .infocon .name, .infocon .descript{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.charactercon:hover .infocon blockquote, .charactercon:hover  .infocon .line, .charactercon:hover .infocon .name, .charactercon:hover .infocon .descript {
+    opacity: 1;
+}
+.charactercon:hover h4 {
+    color: #ffffff;
+}
+blockquote {
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 40px;
+}
+.line {
+    width: 45px;
+    height: 1px;
+    background: #ffffff50;
+    margin: auto;
+    margin-top: 12px;
+}
+h4 {
+    color: #707070;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Pretendard-Regular';
+    margin-top: 12px;
+}
+.name {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.descript{
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #e6e6e6;
+}
+/*갤러리*/
+#gallery {
+    width: 100%;
+    text-align: center;
+}
+.gallcon {
+    width: 1300px;
+    margin: auto;
+    margin-top: 70px;
+
+}
+.gall1, .gall2, .gall3con {
+    display: flex;
+    gap: 20px;
+}
+.gall2 {
+    padding: 20px 0;
+}
+.gall3 {
+    position: relative;
+    overflow: hidden;
+}
+.gall3con {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+
+}
+.gall3con > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.overlay {
+    display: block;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* 기본적으로 보이게 */
+    pointer-events: none; /* 클릭 방지 */
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.703) 0%, rgb(0, 0, 0) 100%);
+}
+.gallcon .expanded {
+    height: auto; /* 펼칠 때 높이 자동 조절 */
+}
+.gall3.expanded .overlay {
+    opacity: 0; /* 펼쳐졌을 때 그라디언트 숨김 */
+}
+#toggle-gall {
+    display: flex;
+    margin: auto;
+    color: #ffffff;
+    margin-top: 21px;
+    padding-bottom: 160px;
+
+}
+#toggle-gall > .material-symbols-rounded {
+    font-size: 50px;
+    font-weight: 300;
+}
+.gall-mobile {
+    display: none;
+}
+
+/*이벤트*/
+#event {
+    width: 100%;
+    height: 1181px;
+    text-align: center;
+    background: url('img/eventbg.png') no-repeat center/cover;
+}
+.eventcon {
+    width: 1300px;
+    margin: auto;
+    margin-top: 70px;
+}
+.con1, .con2 {
+    display: flex;
+    width: 1300px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+.con2 {
+    margin-top: 30px;
+}
+.eventtext {
+    text-align: left;
+
+}
+.day {
+    font-size: 16px;
+    font-weight: 500;
+}
+h5 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.coupontext {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 32px;
+}
+.eventnext {
+    position: relative;
+    text-align: right;
+    font-size: 16px;
+    display: grid;
+    gap: 20px; /* 요소 간 간격 */
+
+}
+.eventnext > li > a > .material-symbols-rounded {
+    font-size: 24px; 
+    padding-left: 10px;
+    vertical-align: middle;
+}
+.eventnoice{
+    text-align: left;
+    font-size: 16px;
+    margin-top: 100px;
+}
+h6 {
+    font-size: 18px;
+}
+.eventnoice > p {
+    margin-top: 15px;
+    line-height: 32px;
+}
+#soundtrack {
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    background: #202020;
+}
+.trackbg {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.soundtrack-con {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 1300px;
+    margin-top: 70px;
+    justify-content: space-between;
+    z-index: 4;
+
+}
+.musiccon {
+    position: relative;
+    margin-top: 81px;
+
+}
+.player {
+    position: relative;
+}
+.album > img {
+    width: 420px;
+    border-radius: 5px;
+    filter: brightness(0.7);
+}
+#play-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#play-btn >.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24;
+
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 58px;
+  
+}
+#more-btn > .material-symbols-rounded {
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 58px;
+}
+
+.trackinfo {
+    text-align: left;
+}
+.track-title { 
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 19px;
+}
+.track-artist {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+#track-list {
+    position: relative;
+    width: 640px;
+}
+#track-list > li {
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px 0;
+    border-bottom: 1px solid #ffffff;
+    cursor: pointer;
+}
+#track-list > li > span {
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+#more-btn {
+    margin-top: 10px;
+    align-self: flex-start; /* 왼쪽 정렬 (필요에 따라 조정) */
+    background: none;
+    color: #fff;
+    padding-bottom: 160px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.hidden {
+    display: none;
+}
+@media (max-width:767px) {
+    body {
+        background: #030303;
+        color: #ffffff;
+        width: 100%;
+    
+    }
+
+    .innertop {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+        justify-content: center;
+    }
+    .logoimg > img {
+        position: absolute;
+        bottom: 70px;
+        width: 550;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    header {
+        width: 100%;
+        height: 100px;
+    }
+    .headerinner {
+        width: 100%;
+        height: 100px;
+    }
+    .logo > h1 {
+        padding-left: 10px;
+        top: 50%;
+    }
+    #mobile-menu {
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #030303e7;
+        backdrop-filter: blur(3px);
+        text-align: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    #mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu, .menu2 {
+        display: block;
+    }
+    .menu {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .menu2 {
+        display: flex;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        line-height: 30px;
+        text-align: center;
+        justify-content: center;
+        padding-top: 27px;
+        border-top: 1px solid #8b8b8b;
+        gap: 20px;
+    }
+    .menu2 > li:first-child {
+        border: 0;
+        padding: 0;
+        padding-bottom: 6px;
+    }
+    .menu > li > a {
+        line-height: 70px;
+    }
+    #menu-toggle > .material-symbols-rounded {
+        display: block;
+        font-size: 32px;
+        padding-right: 10px;
+        cursor: pointer;
+        z-index: 10000;
+    }
+    .menu.active, .menu2.active {
+        display: flex;
+    }
+    .logoimg > img { 
+        width: 550px;
+        margin-bottom: 41px;
+    }
+    .down {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+    .down > .material-symbols-rounded {
+        margin-bottom: 41px;
+        font-size: 33px;
+    }
+    .maleimg{
+        width: 20px;
+        padding: 0;
+        margin-top: 60px;
+    }
+    h2 {
+        margin-top: 19 px;
+        font-size: 20px;
+    }
+    /*시놉시스*/
+    #sinopsis {
+        width: 100%;
+        height: auto;
+        background: #3911ff56;
+        border: 1px solid #ffffff00;
+
+    }
+    .sinopsisbg > img {
+        width: 100%;
+        margin-top: 30px;
+    }
+    h3 {
+        font-size: 17px;
+        margin-top: 45px;
+        line-height: 33px;
+    }
+    #sinopsis > p {
+        font-size: 14px;
+        margin-top: 25px;
+        line-height: 27px;
+        padding-bottom: 90px;
+    }
+    br.mobile {
+        display: inline;
+    }
+    #trailer > iframe{
+        width: 100%;
+        height: 173px;
+
+    }
+    /*캐릭터*/
+    #character {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ff0303;
+        overflow-x: auto;
+        
+    }
+    .character::-webkit-scrollbar {
+        height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
+    }
+    .character::-webkit-scrollbar-track {
+        background-color: #5b5b5b; /* 배경 색 */
+        border-radius: 10px; /* 둥근 모서리 */
+    }
+    .character::-webkit-scrollbar-thumb {
+        background-color: #ffffff; /* 썸 색 */
+        border-radius: 10px; /* 둥근 모서리 */
+        height: 16px; /* 썸 두께 (가로 방향으로 설정) */
+    }
+    .character {
+        display: flex;
+        width: 100%;
+        height: auto;
+        overflow-x: scroll; /* 가로 스크롤 가능하게 */
+        scroll-snap-type: x mandatory; /* 가로 스냅 */
+        scroll-behavior: smooth;
+        margin-top: 45px;
+
+    }
+    .charactercon {
+        flex: none;
+        width: 100vw; /* 한 화면에 한 캐릭터씩 */
+        display: flex;
+        flex-direction: column;
+        scroll-snap-align: start;
+        position: relative;
+        overflow: hidden;
+    }
+    .characterimg {
+        width: 100%;
+        height: 410px;
+    }
+    .characterimg > img {
+        filter: none;
+        transform: none;
+        background-size: auto;
+    }
+    .characterimg-w {
+        display: none;
+    }
+    .characterimg-m {
+        display: block;
+        width: 100%;
+        height: 440px;
+        overflow: hidden;
+        position: relative;
+    }
+    .characterimg-m img {
+        width: 100%;
+        height: 440px;
+        object-fit: cover;
+        
+    }
+    .charactercon:hover .characterimg img {
+        transform: none;
+        filter: none;
+    }
+    .c-info {
+        top: -5%;
+        left: 50%;
+        width: 100%;
+
+    }
+    .c-infobg {
+        width: 100%;
+        height: 116px;
+        left: 0;
+        bottom: 0;
+    }
+
+    .infocon {
+        justify-content: flex-start;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        border: none;
+        padding: 0 10px;
+    }
+    .infocon blockquote, .infocon .line, .infocon .name, .infocon .descript{
+        opacity: 1;
+    }
+    blockquote {
+        line-height: 39px;
+        font-size: 26px;
+        font-weight: 900;
+    }
+    .line {
+        width: 118px;
+        margin: 0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    h4 {
+        font-size: 20px;
+        color: #ffffff;
+    }
+    .infocon > .name {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    .descript {
+        font-size: 14px;
+        margin-top: 31px;
+    }
+    #gallery { 
+
+        width: 100%;
+        height: auto;
+        border: 1px solid #3911ff;
+        overflow-x: auto;
+    }
+    .gall {
+        display: none;
+    }
+
+    /* 스크롤 컨테이너 */
+    .gall-mobile {
+        display: inline-block;
+        width: 100vw;
+        height: auto;
+        border: 1px solid #ffffff;
+        overflow-x: scroll; /* 넘치는 부분 숨김 */
+    }
+    
+    .mgall {
+        overflow-x: auto; /* 가로 스크롤 활성화 */
+        -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 */
+        scroll-snap-type: x mandatory; /* 가로 스냅 효과 */
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px; /* 이미지 간 간격 */
+        padding: 0 10px 10px 10px; /* 상하 패딩 */
+    }
+    
+    .gall-scroll {
+        display: flex;
+        flex-wrap: nowrap; /* 줄바꿈 없이 한 줄 유지 */
+        gap: 10px; /* 이미지 간격 */
+        width: 100%;
+        height: auto;
+    }
+    
+    .gall-scroll img {
+        flex: 0 0 auto; /* 크기 고정 */
+        max-width: auto; /* 화면보다 커지지 않도록 */
+        width: auto;
+        height: 100vh; /* 원본 비율 유지 */
+        object-fit: contain; /* 이미지가 짤리지 않게 */
+        scroll-snap-align: center ;
+    
+    }
+    .gall-scroll img:last-child {
+        
+    }
+    .mgall::-webkit-scrollbar {
+        height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
+    }
+    .mgall::-webkit-scrollbar-track {
+        background-color: #5b5b5b; /* 배경 색 */
+        border-radius: 10px; /* 둥근 모서리 */
+    }
+    .mgall::-webkit-scrollbar-thumb {
+        background-color: #ffffff; /* 썸 색 */
+        border-radius: 10px; /* 둥근 모서리 */
+        height: 16px; /* 썸 두께 (가로 방향으로 설정) */
+    }
+    .ch
+    
+    .overlay {
+        display: none;
+    }
+    #toggle-gall {
+        display: none;
+    }
+    
+
+
+    .gallcon .expanded {
+        display: none;
+
+    }
+
+    #event {
+        width: 100vw;
+        height: 100%;
+        border: 1px solid #a4ff11;
+    }
+    .eventcon {
+        width: 100vw;
+        padding: 0 10px;
+
+    }
+    .con1, .con2 {
+        width: 100%;
+
+
+    }
+    .day {
+        font-size: 13px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    .coupontext {
+        font-size: 12px;
+    }
+    .eventnoice > p {
+        display: block;
+        font-size: 11px;
+        line-height: 20px;
+        padding-bottom: 30px;
+    }
+    /*사운드트랙*/
+    #soundtrack {
+        width: 100vw;
+    }
+    .trackbg {
+        margin-top: 83px;
+    }
+    .trackbg > img {
+        width: 624px;
+    }
+    .soundtrack-con {
+        width: 100vw;
+        flex-direction: column;
+        margin-top: 39px;
+        border: 1px solid #ffffff;
+    }
+
+    .player {
+        width: 100vw;
+    }
+    .album > img {
+        width: 75vw;
+
+    }
+    .track-list {
+        font-size: 16px;
+    }
+    #play-btn > .material-symbols-rounded {
+        font-size: 31px;
+    }
+    .trackinfo {
+        text-align: center;
+        width: 100vw;
+    }
+    .track-title {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .track-artist {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    .tracklist {
+        width: 100vw;
+        margin-top: 49px;
+    }
+    #track-list {
+        margin: auto;
+        width: 75vw;
+    }
+    #track-list > li {
+        font-size: 13px;
+    }
+    #track-list > li > span {
+
+    }
+    #more-btn {
+        width: 100vw;
+        display: block;
+        text-align: center;
+    }
+    #more-btn > .material-symbols-rounded {
+        font-size: 30px;
+    }
+}
