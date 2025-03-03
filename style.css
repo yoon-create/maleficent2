@@ -95,6 +95,9 @@ h1 {
     font-size: 25px;
     letter-spacing: 2px;
 }
+.menu-all{
+    display: flex;
+}
 .menu {
     position: absolute;
     display: flex;
@@ -124,12 +127,8 @@ h1 {
     font-size: 16px;
     font-weight: 600;
 }
-#menu-toggle > .material-symbols-rounded {
+#menu-toggle {
     display: none;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .down {
     position: absolute;
@@ -299,74 +298,83 @@ h4 {
 #gallery {
     width: 100%;
     text-align: center;
+    padding: 100px 0 160px 0;
 }
-.gallcon {
+
+.gall {
     width: 1300px;
     margin: auto;
-    margin-top: 70px;
-
 }
-.gall1, .gall2, .gall3con {
+.gallcon {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.gall1, .gall2, .gall3, .gall4 {
     display: flex;
     gap: 20px;
 }
-.gall2 {
-    padding: 20px 0;
-}
 .gall3 {
     position: relative;
-    overflow: hidden;
+    height: 200px;
 }
-.gall3con {
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-
+.gall4 {
+    display: none;
 }
-.gall3con > img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-.overlay {
-    display: block;
-    position: absolute;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1; /* 기본적으로 보이게 */
-    pointer-events: none; /* 클릭 방지 */
+.gall3 img {
     width: 100%;
     height: 100%;
-    left: 0;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: top;
+}
+.overlay {
+    position: absolute;
     top: 0;
-
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.703) 0%, rgb(0, 0, 0) 100%);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, black);
+    z-index: 2;
 }
-.gallcon .expanded {
-    height: auto; /* 펼칠 때 높이 자동 조절 */
+.gall3 img, .gall4 img {
+    width: 420px;
 }
-.gall3.expanded .overlay {
-    opacity: 0; /* 펼쳐졌을 때 그라디언트 숨김 */
+.expanded .gall3 {
+    height: 100%;
+}
+.expanded .gall3 img {
+    height: 100%;
+}
+.expanded .overlay { 
+    display: none; 
+}
+.expanded .gall3, .expanded .gall4 { 
+    display: flex; 
 }
 #toggle-gall {
-    display: flex;
-    margin: auto;
-    color: #ffffff;
-    margin-top: 21px;
-    padding-bottom: 160px;
+    margin-top: 20px;
+    z-index: 100;
 
 }
 #toggle-gall > .material-symbols-rounded {
     font-size: 50px;
+    color: #ffffff;
     font-weight: 300;
 }
-.gall-mobile {
-    display: none;
+.expanded .toggle-gall {
+    margin-top: 20px;
+    z-index: 100;
+    
 }
 
 /*이벤트*/
 #event {
     width: 100%;
     height: 1181px;
+    padding: 100px 0 160px 0;
     text-align: center;
     background: url('img/eventbg.png') no-repeat center/cover;
 }
@@ -408,8 +416,7 @@ h5 {
     text-align: right;
     font-size: 16px;
     display: grid;
-    gap: 20px; /* 요소 간 간격 */
-
+    gap: 20px; 
 }
 .eventnext > li > a > .material-symbols-rounded {
     font-size: 24px; 
@@ -428,11 +435,12 @@ h6 {
     margin-top: 15px;
     line-height: 32px;
 }
+/*사운드트랙*/
 #soundtrack {
     width: 100%;
     text-align: center;
     position: relative;
-
+    padding: 100px 0 160px 0;
     background: #202020;
 }
 .trackbg {
@@ -519,17 +527,34 @@ h6 {
     right: 0;
     text-align: right;
 }
+.overlay-track {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    width: 100%;
+    height: 170px;
+    bottom: 0px;
+    background: linear-gradient(to bottom, transparent, #202020cf);
+    z-index: 10;
+
+    
+}
 #more-btn {
     margin-top: 10px;
     align-self: flex-start; /* 왼쪽 정렬 (필요에 따라 조정) */
     background: none;
     color: #fff;
-    padding-bottom: 160px;
     cursor: pointer;
     border-radius: 4px;
 }
 .hidden {
     display: none;
+}
+.expanded .overlay-track {
+    display: none;
+}
+.expanded .hidden {
+    display: block;
 }
 @media (max-width:767px) {
     body {
@@ -553,54 +578,105 @@ h6 {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    /*헤더*/
     header {
+        justify-content: space-between;
         width: 100%;
-        height: 100px;
+        height: 80px;
     }
     .headerinner {
-        width: 100%;
-        height: 100px;
+        width: 95%;
+        height: 80px;
+        align-items: center;
     }
     .logo > h1 {
-        padding-left: 10px;
         top: 50%;
+        font-size: 16px;
     }
-    #mobile-menu {
+    /*헤더 메뉴*/
+    /* 햄버거 버튼 보이기 */
+    #menu-toggle {
+        display: flex;
         flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #030303e7;
-        backdrop-filter: blur(3px);
-        text-align: center;
-        z-index: 1000;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        justify-content: space-between;
+        width: 28px;
+        height: 16px;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
     }
 
-    #mobile-menu.active {
-        opacity: 1;
-        visibility: visible;
-    }
-    .menu, .menu2 {
+    #menu-toggle span {
         display: block;
+        width: 28px;
+        height: 2px;
+        border-radius: 30px;
+        background: white;
+        transition: 0.3s;
     }
-    .menu {
-        top: 40%;
+
+    /* 햄버거 버튼 클릭 시 애니메이션 */
+    #menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* 메뉴 활성화 상태 */
+    #mobile-menu.active {
+        display: flex;
+    }
+    #mobile-menu {
+        display: none;
+  
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        border: 1px solid #ff3838;
+    }
+    .menu-all {
+        position: absolute;
         left: 50%;
+        top: 50%;
+        flex-direction: column;
         transform: translate(-50%, -50%);
+
+    }
+
+    .menu {
+        flex-direction: column;
+        border: 1px solid #ffffff;
+    }
+    .menu > li > a {
+        padding: 0;
     }
     .menu2 {
+        position: fixed;
         display: flex;
-        left: 50%;
-        top: 70%;
-        transform: translate(-50%, -50%);
+        border: 1px solid #38ff9f;
         line-height: 30px;
         text-align: center;
         justify-content: center;
-        padding-top: 27px;
         border-top: 1px solid #8b8b8b;
         gap: 20px;
+        width: 200px;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
     }
     .menu2 > li:first-child {
         border: 0;
@@ -609,16 +685,6 @@ h6 {
     }
     .menu > li > a {
         line-height: 70px;
-    }
-    #menu-toggle > .material-symbols-rounded {
-        display: block;
-        font-size: 32px;
-        padding-right: 10px;
-        cursor: pointer;
-        z-index: 10000;
-    }
-    .menu.active, .menu2.active {
-        display: flex;
     }
     .logoimg > img { 
         width: 550px;
@@ -633,21 +699,19 @@ h6 {
         font-size: 33px;
     }
     .maleimg{
-        width: 20px;
+        width: 30px;
         padding: 0;
-        margin-top: 60px;
     }
     h2 {
-        margin-top: 19 px;
+        margin-top: 10 px;
         font-size: 20px;
     }
+
     /*시놉시스*/
     #sinopsis {
         width: 100%;
         height: auto;
-        background: #3911ff56;
-        border: 1px solid #ffffff00;
-
+        padding: 60px 0 90px 0;
     }
     .sinopsisbg > img {
         width: 100%;
@@ -662,7 +726,6 @@ h6 {
         font-size: 14px;
         margin-top: 25px;
         line-height: 27px;
-        padding-bottom: 90px;
     }
     br.mobile {
         display: inline;
@@ -670,17 +733,17 @@ h6 {
     #trailer > iframe{
         width: 100%;
         height: 173px;
-
     }
+
     /*캐릭터*/
     #character {
         width: 100%;
         height: auto;
-        border: 1px solid #ff0303;
         overflow-x: auto;
-        
+        padding: 60px 0 90px 0;
     }
     .character::-webkit-scrollbar {
+    
         height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
     }
     .character::-webkit-scrollbar-track {
@@ -694,7 +757,7 @@ h6 {
     }
     .character {
         display: flex;
-        width: 100%;
+        width: 95%;
         height: auto;
         overflow-x: scroll; /* 가로 스크롤 가능하게 */
         scroll-snap-type: x mandatory; /* 가로 스냅 */
@@ -787,88 +850,82 @@ h6 {
         font-size: 14px;
         margin-top: 31px;
     }
-    #gallery { 
 
+    /*갤러리*/
+    #gallery { 
         width: 100%;
         height: auto;
-        border: 1px solid #3911ff;
-        overflow-x: auto;
+        padding: 60px 0 90px 0;
+        background: #727272;
     }
     .gall {
+        width: 95%;
+        margin: auto;
+        border: 1px solid #ffffff;
+
+    }
+    .gallcon {
+        display: flex;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .gall img {
+
+        
+        height: 199px;
+        border: 1px solid #ffffff;
+    }
+    .gall1, .gall2, .gall3, .gall4 {
+        display: block;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        height: 199px;
+        overflow: hidden;
+    }
+    .gall3 {
+        width: 100%;
+        height: 199px;
+    }
+    .gall3 img {
+        width: 100%;
+    
+    }
+    .gall3 img, .gall4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: 50%, 50%;
+    }
+    .overlay, #toggle-gall {
         display: none;
     }
-
     /* 스크롤 컨테이너 */
-    .gall-mobile {
-        display: inline-block;
-        width: 100vw;
-        height: auto;
-        border: 1px solid #ffffff;
-        overflow-x: scroll; /* 넘치는 부분 숨김 */
-    }
-    
-    .mgall {
-        overflow-x: auto; /* 가로 스크롤 활성화 */
-        -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 */
-        scroll-snap-type: x mandatory; /* 가로 스냅 효과 */
-        display: flex;
-        justify-content: flex-start;
-        gap: 10px; /* 이미지 간 간격 */
-        padding: 0 10px 10px 10px; /* 상하 패딩 */
-    }
-    
-    .gall-scroll {
-        display: flex;
-        flex-wrap: nowrap; /* 줄바꿈 없이 한 줄 유지 */
-        gap: 10px; /* 이미지 간격 */
-        width: 100%;
-        height: auto;
-    }
-    
-    .gall-scroll img {
-        flex: 0 0 auto; /* 크기 고정 */
-        max-width: auto; /* 화면보다 커지지 않도록 */
-        width: auto;
-        height: 100vh; /* 원본 비율 유지 */
-        object-fit: contain; /* 이미지가 짤리지 않게 */
-        scroll-snap-align: center ;
-    
-    }
-    .gall-scroll img:last-child {
-        
-    }
-    .mgall::-webkit-scrollbar {
+    .gallcon::-webkit-scrollbar {
         height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
     }
-    .mgall::-webkit-scrollbar-track {
+    .gallcon::-webkit-scrollbar-track {
         background-color: #5b5b5b; /* 배경 색 */
         border-radius: 10px; /* 둥근 모서리 */
     }
-    .mgall::-webkit-scrollbar-thumb {
+    .gallcon::-webkit-scrollbar-thumb {
         background-color: #ffffff; /* 썸 색 */
         border-radius: 10px; /* 둥근 모서리 */
         height: 16px; /* 썸 두께 (가로 방향으로 설정) */
     }
-    .ch
-    
-    .overlay {
-        display: none;
-    }
-    #toggle-gall {
-        display: none;
-    }
-    
-
 
     .gallcon .expanded {
         display: none;
 
     }
-
+    /*이벤트*/
     #event {
         width: 100vw;
         height: 100%;
-        border: 1px solid #a4ff11;
+        padding: 60px 0 90px 0;
+
     }
     .eventcon {
         width: 100vw;
@@ -889,15 +946,25 @@ h6 {
     .coupontext {
         font-size: 12px;
     }
+    .eventnext {
+        font-size: 14px;
+    }
+    .eventnext > li > a > .material-symbols-rounded {
+        font-size: 20px; 
+        padding-left: 5px;
+    }
     .eventnoice > p {
         display: block;
         font-size: 11px;
         line-height: 20px;
-        padding-bottom: 30px;
     }
+
+
     /*사운드트랙*/
     #soundtrack {
-        width: 100vw;
+        width: 100%;
+        height: auto;
+        padding: 60px 0 90px 0;
     }
     .trackbg {
         margin-top: 83px;
@@ -908,10 +975,11 @@ h6 {
     .soundtrack-con {
         width: 100vw;
         flex-direction: column;
-        margin-top: 39px;
-        border: 1px solid #ffffff;
+        margin-top: 0px;
     }
-
+    .musiccon {
+        margin-top: 45px;
+    }
     .player {
         width: 100vw;
     }
