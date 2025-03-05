@@ -25,7 +25,7 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <div id="mobile-menu">
+                    <div id="menucon">
                         <div class="menu-all">
                             <div class="menu">
                                 <li><a href="#sinopsis">SINOPSIS</a></li>
@@ -185,6 +185,20 @@
                             <img src="img/gall12.jpg" alt="이미지12">
                         </div>
                     </div>
+                    <div class="m-gallcon">
+                        <img src="img/gall1.jpg" alt="이미지1">
+                        <img src="img/gall2.jpg" alt="이미지2">
+                        <img src="img/gall3.jpg" alt="이미지3">
+                        <img src="img/gall4.jpg" alt="이미지4">
+                        <img src="img/gall5.jpg" alt="이미지5">
+                        <img src="img/gall6.jpg" alt="이미지6">
+                        <img src="img/gall7.jpg" alt="이미지7">
+                        <img src="img/gall8.jpg" alt="이미지8">
+                        <img src="img/gall9.jpg" alt="이미지9">
+                        <img src="img/gall10.jpg" alt="이미지10">
+                        <img src="img/gall11.jpg" alt="이미지11">
+                        <img src="img/gall12.jpg" alt="이미지12">
+                    </div>
                 </div>
                 <button class="toggle-gall" id="toggle-gall">
                     <span class="material-symbols-rounded">keyboard_arrow_down</span>
@@ -293,8 +307,8 @@
         //메뉴
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menu-toggle");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const menuLinks = document.querySelectorAll("#mobile-menu a"); // 메뉴 내 링크 선택
+            const mobileMenu = document.getElementById("menucon");
+            const menuLinks = document.querySelectorAll("menucon > a"); // 메뉴 내 링크 선택
 
             // 햄버거 버튼 클릭 시 메뉴 열고 닫기
             menuToggle.addEventListener("click", function () {
