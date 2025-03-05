@@ -280,20 +280,20 @@
                         <ul id="track-list">
                             <li data-src="mp3/track1.mp3" data-title="Mistress of Evil" data-artist="제프 자넬리">Mistress of Evil <span>1:34</span></li>
                             <li data-src="mp3/track2.mp3" data-title="Poachers on the Moors" data-artist="제프 자넬리">Poachers on the Moors<span>4:25</span></li>
-                            <li>What is Going on Here?<span>4:32</span></li>
-                            <li>Ulstead<span>2:40</span></li>
-                            <li>Etiquette Lessons<span>2:06</span></li>
-                            <li>All He Wanted Was Peace<span>4:51</span></li>
-                            <li>We have Her<span>3:50</span></li>
-                            <li>We’re Dark Fey<span>3:54</span></li>
-                            <li>Pinto’s Recon Mission<span>1:53</span></li>
-                            <li>It is Love That Will Heal You<span>2:08</span></li>
+                            <li data-src="" data-title="What is Going on Here?" data-artist="제프 자넬리">What is Going on Here?<span>4:32</span></li>
+                            <li data-src="" data-title="Ulstead" data-artist="제프 자넬리">Ulstead<span>2:40</span></li>
+                            <li data-src="" data-title="Etiquette Lessons" data-artist="제프 자넬리">Etiquette Lessons<span>2:06</span></li>
+                            <li data-src="" data-title="All He Wanted Was Peace" data-artist="제프 자넬리">All He Wanted Was Peace<span>4:51</span></li>
+                            <li data-src="" data-title="We have Her" data-artist="제프 자넬리">We have Her<span>3:50</span></li>
+                            <li data-src="" data-title="We’re Dark Fey" data-artist="제프 자넬리">We’re Dark Fey<span>3:54</span></li>
+                            <li data-src="" data-title="Pinto’s Recon Mission" data-artist="제프 자넬리">Pinto’s Recon Mission<span>1:53</span></li>
+                            <li data-src="" data-title="It is Love That Will Heal You" data-artist="제프 자넬리">It is Love That Will Heal You<span>2:08</span></li>
     
-                            <li class="hidden">Origin Story<span>2:08</span></li>
-                            <li class="hidden">You Don't Have to Change<span>2:02</span></li>
-                            <li class="hidden">The Dance of the Fey<span>2:12</span></li>
-                            <li class="hidden">Back to the Moors<span>1:15</span></li>
-                            <li class="hidden">Our Fight Begins Now!<span>1:46</span></li>
+                            <li class="hidden" data-src="" data-title="Origin Story" data-artist="제프 자넬리">Origin Story<span>2:08</span></li>
+                            <li class="hidden" data-src="" data-title="You Don't Have to Change" data-artist="제프 자넬리">You Don't Have to Change<span>2:02</span></li>
+                            <li class="hidden" data-src="" data-title="The Dance of the Fey" data-artist="제프 자넬리">The Dance of the Fey<span>2:12</span></li>
+                            <li class="hidden" data-src="" data-title="Back to the Moors" data-artist="제프 자넬리">Back to the Moors<span>1:15</span></li>
+                            <li class="hidden" data-src="" data-title="Our Fight Begins Now!" data-artist="제프 자넬리">Our Fight Begins Now!<span>1:46</span></li>
                             <div class="overlay-track"></div>
                         </ul>
                         <button id="more-btn"><span class="material-symbols-rounded">keyboard_arrow_down</span></button>
@@ -308,15 +308,15 @@
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menu-toggle");
             const mobileMenu = document.getElementById("menucon");
-            const menuLinks = document.querySelectorAll("menucon > a"); // 메뉴 내 링크 선택
+            const menuLinks = document.querySelectorAll("menucon > a");
 
-            // 햄버거 버튼 클릭 시 메뉴 열고 닫기
+            // 메뉴 열고 닫기
             menuToggle.addEventListener("click", function () {
-                this.classList.toggle("active"); // 햄버거 버튼 애니메이션
-                mobileMenu.classList.toggle("active"); // 모바일 메뉴 열기/닫기
+                this.classList.toggle("active"); // 버튼 애니메이션
+                mobileMenu.classList.toggle("active"); // 메뉴 열기 닫기
             });
 
-            // 메뉴 안의 링크나 메뉴 영역을 클릭하면 메뉴 닫기
+            // 클릭 메뉴 닫기1 (내)
             menuLinks.forEach(link => {
                 link.addEventListener("click", function () {
                     menuToggle.classList.remove("active"); // 햄버거 버튼 원래대로
@@ -324,18 +324,16 @@
                 });
             });
 
-            // 메뉴 바깥 영역을 클릭하면 메뉴 닫기
+            // 클릭 메뉴 닫기2 (외)
             document.addEventListener("click", function (event) {
                 const isClickInsideMenu = mobileMenu.contains(event.target);
                 const isClickOnToggle = menuToggle.contains(event.target);
-
                 if (!isClickInsideMenu && !isClickOnToggle) {
-                    menuToggle.classList.remove("active"); // 햄버거 버튼 원래대로
-                    mobileMenu.classList.remove("active"); // 메뉴 닫기
+                    menuToggle.classList.remove("active");
+                    mobileMenu.classList.remove("active");
                 }
             });
         });
-
 
         //갤러리
         document.getElementById("toggle-gall").addEventListener("click", function() {
@@ -357,16 +355,15 @@
 
         playPauseBtn.addEventListener("click", () => {
         if (!isPlaying) {
-        // 재생
         audioPlayer.play();
         isPlaying = true;
-        // 버튼 아이콘을 'pause'로 변경
+        // 일시정지 아이콘 변경
         playPauseBtn.innerHTML = '<span class="material-symbols-rounded">pause</span>';
         } else {
         // 일시정지
         audioPlayer.pause();
         isPlaying = false;
-        // 버튼 아이콘을 'play_arrow'로 변경
+        // 플레이 아이콘 변경
         playPauseBtn.innerHTML = '<span class="material-symbols-rounded">play_arrow</span>';
         }
         });
@@ -382,21 +379,20 @@
 
         trackListItems.forEach((item) => {
             item.addEventListener("click", () => {
-            // 1. 모든 트랙 리스트 항목에서 active 클래스 제거 후 클릭된 항목에 추가
             trackListItems.forEach(li => li.classList.remove("active"));
             item.classList.add("active");
 
-            // 2. data-* 속성에서 새로운 오디오 소스, 제목, 아티스트 추출
+            // 노래 파일, 제목, 이름
             const newSrc = item.getAttribute("data-src");
             const newTitle = item.getAttribute("data-title");
             const newArtist = item.getAttribute("data-artist");
 
-            // 3. 오디오 소스 변경 후 재생 (사용자 제스처에 의한 play이므로 재생이 가능)
+            // 노래 변경 후 재생
             if (newSrc) {
                 audioPlayer.src = newSrc;
                 audioPlayer.play().then(() => {
                 isPlaying = true;
-                // 재생 시작하면 재생 버튼 아이콘을 pause로 변경
+                // 플레이 버튼 변경
                 playPauseBtn.innerHTML = '<span class="material-symbols-rounded">pause</span>';
             }).catch((error) => {
                 console.error("오디오 재생 오류:", error);
@@ -405,7 +401,7 @@
                 console.error("data-src 속성이 비어있습니다.");
             }
 
-            // 4. 곡 정보 업데이트
+            // 곡 정보 업뎃
             if (trackTitleEl) {
                 trackTitleEl.textContent = newTitle || ".track-title";
             }
@@ -413,11 +409,10 @@
                 trackArtistEl.textContent = newArtist || "Unknown Artist";
             }
             });
+            });
         });
-        });
 
-
-
+        //트랙리스트 더보기 버튼
         document.getElementById("more-btn").addEventListener("click", function() {
             const tracklist = document.querySelector("#track-list ");
             const icon = document.querySelector("#more-btn span");

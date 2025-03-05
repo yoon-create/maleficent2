@@ -12,7 +12,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 a {
     text-decoration: none;
@@ -149,6 +148,7 @@ header {
 .down > .material-symbols-rounded {
     font-size: 33px;
 }
+
 /*시놉시스*/
 #sinopsis {
     position: relative;
@@ -169,7 +169,6 @@ header {
 }
 .maleimg img {
     width: 30px;
-
 }
 h2 {
     position: relative;
@@ -194,11 +193,13 @@ h3 {
 br.mobile {
     display: none;
 }
+
 /*트레일러*/
 #trailer > video {
     width: 100%;
     height: 747px;
 }
+
 /*캐릭터소개*/
 #character {
     width: 100%;
@@ -226,7 +227,7 @@ br.mobile {
 }
 .characterimg-w img {
     width: 100%;
-    height: auto; /* 혹은 고정 비율을 원한다면 height: 100%; object-fit: cover; */
+    height: auto;
     filter: blur(3px) brightness(0.7);
     transition: transform 0.5s ease, filter 0.5s ease;
 }
@@ -300,6 +301,7 @@ h4 {
     margin-bottom: 30px;
     color: #e6e6e6;
 }
+
 /*갤러리*/
 #gallery {
     width: 100%;
@@ -452,6 +454,7 @@ h6 {
     margin-top: 15px;
     line-height: 32px;
 }
+
 /*사운드트랙*/
 #soundtrack {
     width: 100%;
@@ -478,12 +481,10 @@ h6 {
     margin-top: 70px;
     justify-content: space-between;
     z-index: 4;
-
 }
 .musiccon {
     position: relative;
     margin-top: 81px;
-
 }
 .player {
     position: relative;
@@ -505,7 +506,6 @@ h6 {
   'wght' 300,
   'GRAD' 0,
   'opsz' 24;
-
   border: none;
   background: transparent;
   color: #ffffff;
@@ -518,7 +518,6 @@ h6 {
     color: #ffffff;
     font-size: 58px;
 }
-
 .trackinfo {
     text-align: left;
 }
@@ -562,7 +561,7 @@ h6 {
 }
 #more-btn {
     margin-top: 10px;
-    align-self: flex-start; /* 왼쪽 정렬 (필요에 따라 조정) */
+    align-self: flex-start;
     background: none;
     color: #fff;
     cursor: pointer;
@@ -571,7 +570,6 @@ h6 {
 #more-btn .material-symbols-rounded {
     font-size: 50px;
     font-weight: 300;
-
 }
 .hidden {
     display: none;
@@ -587,9 +585,7 @@ h6 {
         background: #030303;
         color: #ffffff;
         width: 100%;
-    
     }
-
     .innertop {
         position: relative;
         width: 100%;
@@ -620,7 +616,7 @@ h6 {
     .logo > h1 {
         font-size: 16px;
     }
-    /* 햄버거 버튼 보이기 */
+    /*햄버거 메뉴*/
     #menu-toggle {
         display: flex;
         flex-direction: column;
@@ -634,7 +630,6 @@ h6 {
         transform: translateY(-50%);
         z-index: 10;
     }
-
     #menu-toggle span {
         display: block;
         width: 28px;
@@ -643,8 +638,6 @@ h6 {
         background: white;
         transition: 0.3s;
     }
-
-    /* 햄버거 버튼 클릭 시 애니메이션 */
     #menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -656,8 +649,6 @@ h6 {
     #menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-
-    /* 메뉴 활성화 상태 */
     #menucon.active {
         display: flex;
     }
@@ -759,30 +750,30 @@ h6 {
     }
     .character::-webkit-scrollbar {
         display: block;
-        height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
+        height: 8px; 
     }
     .character::-webkit-scrollbar-track {
-        background-color: #5b5b5b; /* 배경 색 */
-        border-radius: 10px; /* 둥근 모서리 */
+        background-color: #5b5b5b; 
+        border-radius: 10px; 
     }
     .character::-webkit-scrollbar-thumb {
-        background-color: #ffffff; /* 썸 색 */
-        border-radius: 10px; /* 둥근 모서리 */
-        height: 16px; /* 썸 두께 (가로 방향으로 설정) */
+        background-color: #ffffff; 
+        border-radius: 10px; 
+        height: 16px; 
     }
     .character {
         display: flex;
         width: 95%;
         height: auto;
-        overflow-x: scroll; /* 가로 스크롤 가능하게 */
-        scroll-snap-type: x mandatory; /* 가로 스냅 */
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         margin-top: 45px;
 
     }
     .charactercon {
         flex: none;
-        width: 100vw; /* 한 화면에 한 캐릭터씩 */
+        width: 100vw;
         display: flex;
         flex-direction: column;
         scroll-snap-align: start;
@@ -812,7 +803,6 @@ h6 {
         width: 100%;
         height: 440px;
         object-fit: cover;
-        
     }
     .charactercon:hover .characterimg img {
         transform: none;
@@ -822,7 +812,6 @@ h6 {
         top: -5%;
         left: 50%;
         width: 100%;
-
     }
     .c-infobg {
         width: 100%;
@@ -830,7 +819,6 @@ h6 {
         left: 0;
         bottom: 0;
     }
-
     .infocon {
         justify-content: flex-start;
         width: 100%;
@@ -874,21 +862,18 @@ h6 {
     }
     .gall {
         width: 95vw;
-        overflow-x: auto; /* 가로 스크롤 가능 */
-        scroll-snap-type: x mandatory; /* 스냅 스크롤 강제 적용 */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
     }
-
     .gallcon {
         display: none;
     }
     .m-gallcon {
         display: flex;
         gap: 10px;
-
     }
-    /* 모든 이미지가 한 번에 하나씩 보이도록 설정 */
     .m-gallcon img {
         flex: none;
         width: 100vw;
@@ -899,31 +884,28 @@ h6 {
     .overlay, #toggle-gall {
         display: none;
     }
-    /* 스크롤 컨테이너 */
     .gall::-webkit-scrollbar {
         display: block;
-        height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
+        height: 8px; 
     }
     .gall::-webkit-scrollbar-track {
-        background-color: #5b5b5b; /* 배경 색 */
-        border-radius: 10px; /* 둥근 모서리 */
+        background-color: #5b5b5b; 
+        border-radius: 10px;
     }
     .gall::-webkit-scrollbar-thumb {
-        background-color: #ffffff; /* 썸 색 */
-        border-radius: 10px; /* 둥근 모서리 */
-        height: 16px; /* 썸 두께 (가로 방향으로 설정) */
+        background-color: #ffffff; 
+        border-radius: 10px; 
+        height: 16px; 
     }
-
     .gallcon .expanded {
         display: none;
-
     }
+
     /*이벤트*/
     #event {
         width: 100vw;
         height: 100%;
         padding: 60px 0 90px 0;
-
     }
     .eventcon {
         width: 100vw;
@@ -932,8 +914,6 @@ h6 {
     }
     .con1, .con2 {
         width: 100%;
-
-
     }
     .day {
         font-size: 13px;
@@ -957,7 +937,6 @@ h6 {
         line-height: 20px;
     }
 
-
     /*사운드트랙*/
     #soundtrack {
         width: 100%;
@@ -979,8 +958,6 @@ h6 {
         width: 100%;
         flex-direction: column;
         margin-top: 45px;
-
-
     }
     .musiccon {
         margin-top: 0;
@@ -1002,7 +979,6 @@ h6 {
     }
     .trackinfo {
         text-align: center;
-
     }
     .track-title {
         margin-top: 10px;
@@ -1022,9 +998,6 @@ h6 {
     }
     #track-list > li {
         font-size: 13px;
-    }
-    #track-list > li > span {
-
     }
     #more-btn {
         width: 100vw;
