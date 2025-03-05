@@ -46,7 +46,7 @@ body {
     width: 100vw;
     position: relative;
     overflow-x: hidden;
-        font-family: 'Pretendard-Regular';
+     font-family: 'Pretendard';
 }
 .wrap {
     position: relative;
@@ -153,6 +153,7 @@ h1 {
     width: 100%;
     height: 793px;
     text-align: center;
+    padding: 100px 0 160px 0;
 }
 .sinopsisbg {
     position: absolute;
@@ -161,18 +162,20 @@ h1 {
 }
 .maleimg {
     position: relative;
-    margin-top: 100px;
     margin: auto;
-    width: 25px;
     z-index: 4;
+}
+.maleimg img {
+    width: 30px;
+
 }
 h2 {
     position: relative;
     font-family: 'maleficent';
     font-size: 25px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     line-height: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     z-index: 4;
 }
 h3 {
@@ -190,14 +193,15 @@ br.mobile {
     display: none;
 }
 /*트레일러*/
-#trailer > iframe {
+#trailer > video {
     width: 100%;
-    height: 847px;
+    height: 747px;
 }
 /*캐릭터소개*/
 #character {
     width: 100%;
     text-align: center;
+    padding: 100px 0 160px 0;
 }
 .character {
     display: flex;
@@ -300,28 +304,36 @@ h4 {
     text-align: center;
     padding: 100px 0 160px 0;
 }
-
 .gall {
     width: 1300px;
     margin: auto;
 }
 .gallcon {
     margin-top: 70px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: block;
     gap: 20px;
 }
 
 .gall1, .gall2, .gall3, .gall4 {
     display: flex;
     gap: 20px;
+    padding: 10px 0;
+}
+.gall1 {
+    padding-top: 0;
 }
 .gall3 {
     position: relative;
     height: 200px;
 }
 .gall4 {
+    padding-bottom: 0;
+}
+.gall4 {
     display: none;
+}
+.gall img {
+    width: 420px;
 }
 .gall3 img {
     width: 100%;
@@ -357,7 +369,6 @@ h4 {
 #toggle-gall {
     margin-top: 20px;
     z-index: 100;
-
 }
 #toggle-gall > .material-symbols-rounded {
     font-size: 50px;
@@ -441,13 +452,18 @@ h6 {
     text-align: center;
     position: relative;
     padding: 100px 0 160px 0;
-    background: #202020;
+    background: #121212;
 }
 .trackbg {
     position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
     z-index: 1;
 }
+.trackbg img {
+    width: 100%;
+} 
 .soundtrack-con {
     position: relative;
     display: flex;
@@ -502,7 +518,7 @@ h6 {
 }
 .track-title { 
     font-size: 24px;
-    font-weight: 800;
+    font-weight: bold;
     margin-top: 19px;
 }
 .track-artist {
@@ -517,7 +533,7 @@ h6 {
 #track-list > li {
     text-align: left;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 600;
     padding: 20px 0;
     border-bottom: 1px solid #ffffff;
     cursor: pointer;
@@ -526,18 +542,17 @@ h6 {
     position: absolute;
     right: 0;
     text-align: right;
+    font-weight: 500;
 }
 .overlay-track {
     position: absolute;
     margin: auto;
     right: 0;
     width: 100%;
-    height: 170px;
+    height: 270px;
     bottom: 0px;
-    background: linear-gradient(to bottom, transparent, #202020cf);
+    background: linear-gradient(to bottom, transparent, #121212af );
     z-index: 10;
-
-    
 }
 #more-btn {
     margin-top: 10px;
@@ -546,6 +561,11 @@ h6 {
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+}
+#more-btn .material-symbols-rounded {
+    font-size: 50px;
+    font-weight: 300;
+
 }
 .hidden {
     display: none;
@@ -638,7 +658,7 @@ h6 {
     }
     #mobile-menu {
         display: none;
-  
+        flex-direction: column;
         position: fixed;
         top: 0;
         left: 0;
@@ -665,18 +685,16 @@ h6 {
         padding: 0;
     }
     .menu2 {
-        position: fixed;
-        display: flex;
+
         border: 1px solid #38ff9f;
         line-height: 30px;
-        text-align: center;
-        justify-content: center;
+
         border-top: 1px solid #8b8b8b;
         gap: 20px;
         width: 200px;
-        left: 50%;
-        top: 100%;
-        transform: translate(-50%, -50%);
+
+    }
+    .menu2 > li {
     }
     .menu2 > li:first-child {
         border: 0;
@@ -730,9 +748,9 @@ h6 {
     br.mobile {
         display: inline;
     }
-    #trailer > iframe{
+    #trailer > video{
         width: 100%;
-        height: 173px;
+        height: 250px;
     }
 
     /*캐릭터*/
@@ -856,61 +874,62 @@ h6 {
         width: 100%;
         height: auto;
         padding: 60px 0 90px 0;
-        background: #727272;
     }
     .gall {
-        width: 95%;
-        margin: auto;
-        border: 1px solid #ffffff;
-
-    }
-    .gallcon {
+        width: 95vw;
+        margin-top: 40px;
+        height: auto;
         display: flex;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
         overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
         padding-bottom: 10px;
     }
-    
-    .gall img {
 
-        
-        height: 199px;
-        border: 1px solid #ffffff;
+    .gallcon {
+        display: flex;
+        margin: auto;
+        flex-wrap: nowrap;
+        width: 100vw;
+        gap: 10px;
     }
+
     .gall1, .gall2, .gall3, .gall4 {
-        display: block;
-        scroll-snap-align: center;
-        flex-shrink: 0;
-        height: 199px;
-        overflow: hidden;
-    }
-    .gall3 {
-        width: 100%;
-        height: 199px;
-    }
-    .gall3 img {
-        width: 100%;
-    
-    }
-    .gall3 img, .gall4 img {
-        width: 100%;
+        flex: none;
+        margin: auto;
+        display: flex;
+        gap: 10px;
         height: 100%;
+        padding: 0;
+        scroll-snap-align: center;
+
+    }
+    /* 모든 이미지가 한 번에 하나씩 보이도록 설정 */
+    .gall img {
+        width: 100vw;
+        height: auto;
+    }
+
+    /* gall3과 gall4는 object-fit: contain 적용 */
+    .gall3 img, .gall4 img {
+        width: 100vw;
+        height: 53vw;
         object-fit: contain;
-        object-position: 50%, 50%;
+
     }
     .overlay, #toggle-gall {
         display: none;
     }
     /* 스크롤 컨테이너 */
-    .gallcon::-webkit-scrollbar {
+    .gall::-webkit-scrollbar {
         height: 8px; /* 트랙 두께 (가로 방향으로 설정) */
     }
-    .gallcon::-webkit-scrollbar-track {
+    .gall::-webkit-scrollbar-track {
         background-color: #5b5b5b; /* 배경 색 */
         border-radius: 10px; /* 둥근 모서리 */
     }
-    .gallcon::-webkit-scrollbar-thumb {
+    .gall::-webkit-scrollbar-thumb {
         background-color: #ffffff; /* 썸 색 */
         border-radius: 10px; /* 둥근 모서리 */
         height: 16px; /* 썸 두께 (가로 방향으로 설정) */
@@ -930,7 +949,7 @@ h6 {
     .eventcon {
         width: 100vw;
         padding: 0 10px;
-
+        margin-top: 45px;
     }
     .con1, .con2 {
         width: 100%;
@@ -967,35 +986,44 @@ h6 {
         padding: 60px 0 90px 0;
     }
     .trackbg {
-        margin-top: 83px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
     .trackbg > img {
-        width: 624px;
+        height: 499px;
+        overflow: hidden;
+        object-fit: cover;
     }
     .soundtrack-con {
-        width: 100vw;
+        width: 100%;
         flex-direction: column;
-        margin-top: 0px;
+        margin-top: 45px;
+
+
     }
     .musiccon {
-        margin-top: 45px;
+        margin-top: 0;
     }
     .player {
-        width: 100vw;
+        width: 100%;
+        padding: 0 74px 0 74px;
+        margin: auto;
     }
     .album > img {
-        width: 75vw;
-
+        width: 100%;
+        border-radius: 20px;
     }
     .track-list {
         font-size: 16px;
     }
     #play-btn > .material-symbols-rounded {
-        font-size: 31px;
+        font-size: 50px;
     }
     .trackinfo {
         text-align: center;
-        width: 100vw;
+
     }
     .track-title {
         margin-top: 10px;
