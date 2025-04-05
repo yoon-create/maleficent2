@@ -36,7 +36,9 @@ button {
     border: 0;
     background: transparent;
 }
-
+html {
+    font-size: 16px;
+}
 body {
     background: #030303;
     color: #ffffff;
@@ -90,7 +92,7 @@ header {
 }
 .logo > h1 {
     font-family: 'maleficent';
-    font-size: 25px;
+    font-size: 1.5625em;
     letter-spacing: 3px;
 }
 .menu-all{
@@ -106,7 +108,7 @@ header {
 .menu > li > a {
     padding: 0 20px;
     font-family: 'maleficent';
-    font-size: 16px;
+    font-size: 1rem;
     color: #ffffff;
     letter-spacing: 3px;
 }
@@ -122,7 +124,7 @@ header {
 .menu2 > li:first-child {
     padding: 0 10px 0 20px;
     border-left: 1px solid #ffffff;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
 }
 #menu-toggle {
@@ -139,12 +141,12 @@ header {
     margin-bottom: 18px;
 }
 .down > p {
-    font-size: 17px;
+    font-size: 1.0625rem;
     color: #ffffff;
     font-family: 'maleficent';
 }
 .down > .material-symbols-rounded {
-    font-size: 33px;
+    font-size: 2.0625rem;
 }
 
 /*시놉시스*/
@@ -171,7 +173,7 @@ header {
 h2 {
     position: relative;
     font-family: 'maleficent';
-    font-size: 25px;
+    font-size: 1.5625rem;;
     letter-spacing: 3px;
     line-height: auto;
     margin-top: 10px;
@@ -179,13 +181,13 @@ h2 {
 }
 h3 {
     margin-top: 70px;
-    font-size: 38px;
+    font-size: 2.375rem;
     line-height: 57.6px;
     font-weight: 900;
 }
 #sinopsis > p {
     margin-top: 38px;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 59px;
 }
 br.mobile {
@@ -268,7 +270,7 @@ br.mobile {
     color: #ffffff;
 }
 blockquote {
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 700;
     line-height: 40px;
 }
@@ -281,19 +283,19 @@ blockquote {
 }
 h4 {
     color: #707070;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     font-family: 'Pretendard-Regular';
     margin-top: 20px;
 }
 .name {
     margin-top: 7px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 300;
 }
 .descript{
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 30px;
     color: #e6e6e6;
@@ -376,7 +378,7 @@ h4 {
     z-index: 100;
 }
 #toggle-gall > .material-symbols-rounded {
-    font-size: 50px;
+    font-size: 3.125rem;;
     color: #ffffff;
     font-weight: 300;
 }
@@ -414,39 +416,39 @@ h4 {
 
 }
 .day {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 }
 h5 {
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 800;
     margin-top: 10px;
 }
 .coupontext {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     margin-top: 32px;
 }
 .eventnext {
     position: relative;
     text-align: right;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     display: grid;
     gap: 20px; 
 }
 .eventnext > li > a > .material-symbols-rounded {
-    font-size: 24px; 
+    font-size: 1.5rem; 
     padding-left: 10px;
     vertical-align: middle;
 }
 .eventnoice{
     text-align: left;
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 100px;
 }
 h6 {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .eventnoice > p {
     margin-top: 15px;
@@ -459,7 +461,7 @@ h6 {
     text-align: center;
     position: relative;
     padding: 100px 0 160px 0;
-    background: #121212;
+    background: #111111;
 }
 .trackbg {
     position: absolute;
@@ -467,6 +469,11 @@ h6 {
     height: 100%;
     top: 0;
     z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+
 }
 .trackbg img {
     width: 100%;
@@ -507,25 +514,25 @@ h6 {
   border: none;
   background: transparent;
   color: #ffffff;
-  font-size: 58px;
+  font-size: 3.625rem;
   
 }
 #more-btn > .material-symbols-rounded {
     border: 0;
     background: transparent;
     color: #ffffff;
-    font-size: 58px;
+    font-size: 3.625rem;
 }
 .trackinfo {
     text-align: left;
 }
 .track-title { 
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 19px;
 }
 .track-artist {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     margin-top: 10px;
 }
@@ -535,7 +542,7 @@ h6 {
 }
 #track-list > li {
     text-align: left;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 600;
     padding: 20px 0;
     border-bottom: 1px solid #ffffff;
@@ -571,7 +578,7 @@ h6 {
     border-radius: 4px;
 }
 #more-btn .material-symbols-rounded {
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 300;
 }
 .hidden {
@@ -586,7 +593,7 @@ h6 {
 
 .notice_port {
     color: #bfbfbf;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     text-align: center;
     padding: 10px 0;
@@ -626,7 +633,7 @@ h6 {
         align-items: center;
     }
     .logo > h1 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     /*햄버거 메뉴*/
     #menu-toggle {
@@ -709,12 +716,12 @@ h6 {
         margin-bottom: 41px;
     }
     .down {
-        font-size: 20px;
+        font-size:1.25rem;
         margin-bottom: 6px;
     }
     .down > .material-symbols-rounded {
         margin-bottom: 41px;
-        font-size: 33px;
+        font-size: 2.0625rem;
     }
     .maleimg{
         width: 30px;
@@ -722,7 +729,7 @@ h6 {
     }
     h2 {
         margin-top: 10 px;
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     /*시놉시스*/
@@ -736,12 +743,12 @@ h6 {
         margin-top: 30px;
     }
     h3 {
-        font-size: 17px;
+        font-size: 1.0625rem;
         margin-top: 45px;
         line-height: 33px;
     }
     #sinopsis > p {
-        font-size: 14px;
+        font-size: 0.875rem;
         margin-top: 25px;
         line-height: 27px;
     }
@@ -845,7 +852,7 @@ h6 {
     }
     blockquote {
         line-height: 39px;
-        font-size: 26px;
+        font-size: 1.625rem;
         font-weight: 900;
     }
     .line {
@@ -855,15 +862,15 @@ h6 {
         margin-bottom: 16px;
     }
     h4 {
-        font-size: 20px;
+        font-size: 1.25rem;
         color: #ffffff;
     }
     .infocon > .name {
-        font-size: 14px;
+        font-size: 0.875rem;
         margin-top: 12px;
     }
     .descript {
-        font-size: 14px;
+        font-size: 0.875rem;
         margin-top: 31px;
     }
     .descript br {
@@ -931,24 +938,24 @@ h6 {
         width: 100%;
     }
     .day {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
     h5 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .coupontext {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .eventnext {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
     .eventnext > li > a > .material-symbols-rounded {
-        font-size: 20px; 
+        font-size:1.25rem; 
         padding-left: 5px;
     }
     .eventnoice > p {
         display: block;
-        font-size: 11px;
+        font-size: 0.6875rem;
         line-height: 20px;
     }
 
@@ -986,20 +993,20 @@ h6 {
         width: 100%;
     }
     .track-list {
-        font-size: 16px;
+        font-size: 1rem;
     }
     #play-btn > .material-symbols-rounded {
-        font-size: 50px;
+        font-size: 3.125rem;
     }
     .trackinfo {
         text-align: center;
     }
     .track-title {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
     .track-artist {
-        font-size: 12px;
+        font-size: 0.75rem;
         margin-top: 8px;
     }
     .tracklist {
@@ -1011,7 +1018,7 @@ h6 {
         width: 75vw;
     }
     #track-list > li {
-        font-size: 15px;
+        font-size: 0.9375rem;
         padding: 15px 0;
     }
     #more-btn {
@@ -1020,6 +1027,6 @@ h6 {
         text-align: center;
     }
     #more-btn > .material-symbols-rounded {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 }
