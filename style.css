@@ -945,6 +945,7 @@ h6 {
     }
     .coupontext {
         font-size: 0.75rem;
+        max-width: 220px;
     }
     .eventnext {
         font-size: 0.875rem;
